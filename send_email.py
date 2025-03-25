@@ -1,11 +1,12 @@
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import smtplib
+import os
 
 def send_email(email, height, avarege):
     # Configurações do remetente
-    remetente = "jozo.stipanov@gmail.com"
-    senha = "wczb rewi unzg ajiu"  # Não é sua senha normal!
+    remetente = os.getenv('EMAIL_USER')
+    senha = os.getenv('EMAIL_PASS')
 
     # Configurações do destinatário
     destinatario = email
